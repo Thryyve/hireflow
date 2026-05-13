@@ -11,20 +11,47 @@ function App() {
 
   if (user) {
     return (
-      <div>
-        <h2>Welcome, {user.name}</h2>
-        <p>Role: {user.role}</p>
-        <button onClick={logout}>Logout</button>
-        {user.role === 'company' && <CompanyDashboard />}
-        {user.role === 'candidate' && <CandidateDashboard />}
+      <div className="min-h-screen bg-gray-100">
+        <nav className="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold text-blue-600">JobPortal</h1>
+          <div className="flex items-center gap-4">
+            <span className="text-gray-600 text-sm">Welcome, {user.name}</span>
+            <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">{user.role}</span>
+            <button
+              onClick={logout}
+              className="bg-red-500 text-white px-4 py-1 rounded-lg text-sm hover:bg-red-600 transition"
+            >
+              Logout
+            </button>
+          </div>
+        </nav>
+        <div className="p-6">
+          {user.role === 'company' && <CompanyDashboard />}
+          {user.role === 'candidate' && <CandidateDashboard />}
+        </div>
       </div>
     )
   }
 
   return (
     <div>
-      <button onClick={() => setPage('login')}>Login</button>
-      <button onClick={() => setPage('register')}>Register</button>
+      <nav className="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-blue-600">JobPortal</h1>
+        <div className="flex gap-4">
+          <button
+            onClick={() => setPage('login')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${page === 'login' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+          >
+            Login
+          </button>
+          <button
+            onClick={() => setPage('register')}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${page === 'register' ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-100'}`}
+          >
+            Register
+          </button>
+        </div>
+      </nav>
       {page === 'login' ? <Login /> : <Register />}
     </div>
   )
