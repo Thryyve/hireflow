@@ -25,6 +25,7 @@ function CandidateDashboard() {
   useEffect(() => {
     fetchJobs()
     fetchApplications()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleApply = async (jobId) => {
