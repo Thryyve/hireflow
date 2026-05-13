@@ -1,19 +1,16 @@
-import { useState } from 'react'
+import { useAuth } from './context/AuthContext'
+import Login from './pages/Login'
 
 function App() {
-  const [message, setMessage] = useState('')
-
-  const testBackend = async () => {
-    const response = await fetch('/api/auth/me')
-    const data = await response.json()
-    setMessage(data.message)
-  }
+  const { user } = useAuth()
 
   return (
     <div>
-      <h1>Job Portal</h1>
-      <button onClick={testBackend}>Test Backend</button>
-      <p>{message}</p>
+      {user ? (
+        <h1>Welcome, {user.name}</h1>
+      ) : (
+        <Login />
+      )}
     </div>
   )
 }
