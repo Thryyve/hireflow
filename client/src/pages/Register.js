@@ -1,3 +1,4 @@
+import API_URL from '../api'
 import { useState } from 'react'
 
 function Register() {
@@ -15,7 +16,7 @@ function Register() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

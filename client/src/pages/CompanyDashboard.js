@@ -1,3 +1,4 @@
+import API_URL from '../api'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 
@@ -15,7 +16,7 @@ function CompanyDashboard() {
   const [message, setMessage] = useState('')
 
   const fetchCompanyJobs = async () => {
-    const response = await fetch('/api/jobs/company', {
+    const response = await fetch(`${API_URL}/api/jobs/company`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     const data = await response.json()
@@ -33,7 +34,7 @@ function CompanyDashboard() {
 
   const handlePostJob = async () => {
     try {
-      const response = await fetch('/api/jobs/post', {
+      const response = await fetch(`${API_URL}/api/jobs/post`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ function CompanyDashboard() {
   }
 
   const handleDelete = async (id) => {
-    await fetch(`/api/jobs/${id}`, {
+    await fetch(`${API_URL}/api/jobs/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     })

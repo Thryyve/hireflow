@@ -1,3 +1,4 @@
+import API_URL from '../api'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 
@@ -9,13 +10,13 @@ function CandidateDashboard() {
   const [message, setMessage] = useState('')
 
   const fetchJobs = async () => {
-    const response = await fetch('/api/jobs')
+    const response = await fetch(`${API_URL}/api/jobs`)
     const data = await response.json()
     setJobs(data)
   }
 
   const fetchApplications = async () => {
-    const response = await fetch('/api/applications/my-applications', {
+    const response = await fetch(`${API_URL}/api/applications/my-applications`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     const data = await response.json()
@@ -30,7 +31,7 @@ function CandidateDashboard() {
 
   const handleApply = async (jobId) => {
     try {
-      const response = await fetch(`/api/applications/${jobId}/apply`, {
+      const response = await fetch(`${API_URL}/api/applications/${jobId}/apply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
