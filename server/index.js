@@ -7,6 +7,8 @@ const authRoutes = require('./routes/authRoutes')
 
 const jobRoutes = require('./routes/jobRoutes')
 
+const applicationRoutes = require('./routes/applicationRoutes')
+
 dotenv.config()
 
 connectDB()
@@ -18,6 +20,7 @@ app.use(express.json())
 
 app.use('/api/auth', authRoutes)
 app.use('/api/jobs', jobRoutes)
+app.use('/api/applications', applicationRoutes)
 
 app.get('/', (req, res) => {
   res.send('Job Portal API is running')
