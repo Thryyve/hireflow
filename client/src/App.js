@@ -13,7 +13,7 @@ function App() {
     return (
       <div className="min-h-screen bg-gray-100">
         <nav className="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-blue-600">JobPortal</h1>
+          <h1 className="text-xl font-bold text-blue-600">HireFlow</h1>
           <div className="flex items-center gap-4">
             <span className="text-gray-600 text-sm">Welcome, {user.name}</span>
             <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">{user.role}</span>
