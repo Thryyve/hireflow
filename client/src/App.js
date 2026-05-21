@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <nav className="bg-white shadow-sm px-6 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">JobPortal</h1>
+        <h1 className="text-xl font-bold text-blue-600">HireFlow</h1>
         <div className="flex gap-4">
           <button
             onClick={() => setPage('login')}
