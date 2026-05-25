@@ -9,6 +9,7 @@ function Register() {
     role: 'candidate'
   })
   const [message, setMessage] = useState('')
+  const [isError, setIsError] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -22,9 +23,16 @@ function Register() {
         body: JSON.stringify(formData)
       })
       const data = await response.json()
+      if (!response.ok) {
+        setMessage(data.message || 'Registration failed')
+        setIsError(true)
+        return
+      }
       setMessage(data.message)
+      setIsError(false)
     } catch (error) {
       setMessage('Something went wrong')
+      setIsError(true)
     }
   }
 
@@ -32,7 +40,9 @@ function Register() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Create Account</h2>
-        {message && <p className="text-green-600 text-sm mb-4">{message}</p>}
+        {message && (
+          <p className={`text-sm mb-4 ${isError ? 'text-red-600' : 'text-green-600'}`}>{message}</p>
+        )}
         <input
           name="name"
           placeholder="Full Name"

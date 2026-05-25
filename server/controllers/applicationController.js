@@ -38,9 +38,15 @@ const getCandidateApplications = async (req, res) => {
   }
 }
 
+const VALID_STATUSES = ['applied', 'reviewed', 'shortlisted', 'rejected']
+
 const getJobApplications = async (req, res) => {
   try {
     const job = await Job.findById(req.params.id)
+
+    if (!job) {
+      return res.status(404).json({ message: 'Job not found' })
+    }
 
     if (job.company.toString() !== req.user.userId) {
       return res.status(403).json({ message: 'Not authorized' })
@@ -59,11 +65,22 @@ const updateApplicationStatus = async (req, res) => {
   try {
     const { status } = req.body
 
-    const application = await Application.findByIdAndUpdate(
-      req.params.id,
-      { status },
-      { new: true }
-    )
+    if (!VALID_STATUSES.includes(status)) {
+      return res.status(400).json({ message: 'Invalid status' })
+    }
+
+    const application = await Application.findById(req.params.id).populate('job')
+
+    if (!application) {
+      return res.status(404).json({ message: 'Application not found' })
+    }
+
+    if (application.job.company.toString() !== req.user.userId) {
+      return res.status(403).json({ message: 'Not authorized' })
+    }
+
+    application.status = status
+    await application.save()
 
     res.status(200).json({ message: 'Status updated', application })
   } catch (error) {
