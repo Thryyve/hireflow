@@ -175,7 +175,7 @@ function CompanyDashboard() {
         {message && (
           <p className={`text-sm mb-4 ${isError ? 'text-red-600' : 'text-green-600'}`}>{message}</p>
         )}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input name="title" placeholder="Job Title" onChange={handleChange}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <input name="location" placeholder="Location" onChange={handleChange}
@@ -206,7 +206,7 @@ function CompanyDashboard() {
         <div className="grid gap-4">
           {jobs.map(job => (
             <div key={job._id} className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex justify-between items-start">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800">{job.title}</h4>
                   <p className="text-gray-500 text-sm mt-1">{job.location} — {job.salary}</p>
@@ -217,7 +217,7 @@ function CompanyDashboard() {
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col sm:flex-row gap-2 shrink-0">
                   <button onClick={() => handleViewApplications(job._id)}
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition">
                     {expandedJobId === job._id ? 'Hide Applications' : 'View Applications'}
@@ -239,7 +239,7 @@ function CompanyDashboard() {
                   ) : (
                     <div className="grid gap-3">
                       {applications.map(app => (
-                        <div key={app._id} className="flex justify-between items-center bg-gray-50 rounded-lg p-4">
+                        <div key={app._id} className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 bg-gray-50 rounded-lg p-4">
                           <div>
                             <p className="font-medium text-gray-800">{app.candidate?.name}</p>
                             <p className="text-gray-500 text-sm">{app.candidate?.email}</p>

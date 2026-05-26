@@ -121,7 +121,7 @@ function CandidateDashboard() {
           <p className="text-gray-500">No jobs found</p>
         ) : (
           filteredJobs.map(job => (
-            <div key={job._id} className="bg-white rounded-lg shadow-md p-6 flex justify-between items-start">
+            <div key={job._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
               <div>
                 <h4 className="text-lg font-semibold text-gray-800">{job.title}</h4>
                 <p className="text-gray-500 text-sm mt-1">{job.location} — {job.salary}</p>
@@ -155,7 +155,7 @@ function CandidateDashboard() {
       ) : (
         <div className="grid gap-4">
           {applications.map(app => (
-            <div key={app._id} className="bg-white rounded-lg shadow-md p-6 flex justify-between items-center">
+            <div key={app._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
               <div>
                 <h4 className="text-lg font-semibold text-gray-800">{app.job?.title}</h4>
                 <p className="text-gray-500 text-sm mt-1">{app.job?.location} — {app.job?.salary}</p>

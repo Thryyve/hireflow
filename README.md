@@ -47,11 +47,11 @@ A full stack Job Portal with ATS (Applicant Tracking System) built with the MERN
    npm install
 ```
 
-3. Create `.env` file in server folder
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=8000
-CLIENT_URL=http://localhost:3000
+3. Create server env file from the template
+```bash
+   cp .env.example .env
+   # Edit .env with your MongoDB URI and JWT secret
+```
 
 4. Install frontend dependencies
 ```bash
@@ -59,8 +59,11 @@ CLIENT_URL=http://localhost:3000
    npm install
 ```
 
-5. Create `.env` file in client folder
-REACT_APP_API_URL=http://localhost:8000
+5. Create client env file from the template
+```bash
+   cd client
+   cp .env.example .env
+```
 
 6. Run the app
 ```bash
@@ -72,6 +75,20 @@ REACT_APP_API_URL=http://localhost:8000
    cd client
    npm start
 ```
+
+## Deployment
+
+### Vercel (frontend)
+Set this environment variable in **Project → Settings → Environment Variables**:
+
+| Variable | Value |
+|---|---|
+| `REACT_APP_API_URL` | Your Render backend URL (e.g. `https://job-portal-backend-iewu.onrender.com`) |
+
+Do not commit `.env` or `.env.production` — use Vercel env vars instead. See `client/.env.example` for local setup.
+
+### Render (backend)
+Set `MONGO_URI`, `JWT_SECRET`, `PORT`, and `CLIENT_URL` (your Vercel frontend URL, e.g. `https://job-portal-six-opal.vercel.app`).
 
 ## API Reference
 

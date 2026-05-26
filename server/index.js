@@ -15,8 +15,18 @@ connectDB()
 
 const app = express()
 
+// Set CLIENT_URL in .env (local) or Render env vars (production).
+const clientOrigin =
+  process.env.CLIENT_URL ||
+  (process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : undefined)
+
+if (!clientOrigin) {
+  console.error('CLIENT_URL must be set in production')
+  process.exit(1)
+}
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: clientOrigin,
   credentials: true
 }))
 app.use(express.json())
