@@ -4,7 +4,6 @@
 
 HireFlow lets companies post jobs, review applicants, and move them through a clear ATS pipeline. Candidates discover roles, submit applications in one click, and track their status in real time. Authentication is role-based (company vs. candidate) using JWT, so every action is properly protected. The UI is fast, clean, and built around real hiring flows.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Thryyve/hireflow/ci.yml?label=CI&style=flat-square)](https://github.com/Thryyve/hireflow)
 [![License: ISC](https://img.shields.io/badge/license-ISC-blue?style=flat-square)](./server/package.json)
 [![React](https://img.shields.io/badge/React-19.2.6-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Express](https://img.shields.io/badge/Express-4.18.2-000000?style=flat-square&logo=express)](https://expressjs.com)
@@ -210,9 +209,6 @@ cd client && npm test -- --watchAll=false
 # With coverage report
 cd client && npm test -- --watchAll=false --coverage
 ```
-
-> **Note:** No backend test suite is currently configured. Express/Mongoose logic is covered indirectly via the frontend integration tests.
-
 ---
 
 ## 🚢 Deployment
@@ -231,8 +227,6 @@ cd client && npm test -- --watchAll=false --coverage
    - `JWT_SECRET`
    - `PORT` (default `8000`)
    - `CLIENT_URL` → your frontend URL (e.g. `https://job-portal-six-opal.vercel.app`)
-
-> No `docker-compose.yml` or Dockerfiles are present in this repository.
 
 ---
 
