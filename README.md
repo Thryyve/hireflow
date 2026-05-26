@@ -14,7 +14,11 @@ HireFlow lets companies post jobs, review applicants, and move them through a cl
 ---
 
 <!-- Add a screenshot or demo GIF here — recommended size: 1280×720 -->
-<!-- ![HireFlow Demo](./docs/demo.gif) -->
+## 📸 Screenshots
+
+| Company Dashboard | Candidate Dashboard |
+|---|---|
+| ![Company Dashboard](./docs/company-demo.png) | ![Candidate Dashboard](./docs/candidate-demo.png) |
 
 🌐 **Live Demo:** [job-portal-six-opal.vercel.app](https://job-portal-six-opal.vercel.app)  
 🔌 **Backend API:** [job-portal-backend-iewu.onrender.com](https://job-portal-backend-iewu.onrender.com)
