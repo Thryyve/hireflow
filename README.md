@@ -4,7 +4,7 @@
 
 HireFlow lets companies post jobs, review applicants, and move them through a clear ATS pipeline. Candidates discover roles, submit applications in one click, and track their status in real time. Authentication is role-based (company vs. candidate) using JWT, so every action is properly protected. The UI is fast, clean, and built around real hiring flows.
 
-[![License: ISC](https://img.shields.io/badge/license-ISC-blue?style=flat-square)](./server/package.json)
+[![License: ISC](https://img.shields.io/badge/license-ISC-blue?style=flat-square)](./LICENSE)
 [![React](https://img.shields.io/badge/React-19.2.6-61dafb?style=flat-square&logo=react)](https://react.dev)
 [![Express](https://img.shields.io/badge/Express-4.18.2-000000?style=flat-square&logo=express)](https://expressjs.com)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47a248?style=flat-square&logo=mongodb)](https://www.mongodb.com/atlas)
