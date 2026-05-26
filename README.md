@@ -164,19 +164,37 @@ cd server && npm start
 
 ```
 hireflow/
-├── client/                         # React frontend
+├── client/                          # React frontend
+│   ├── public/
+│   │   └── index.html
 │   └── src/
-│       ├── api.js                  # API base URL config (REACT_APP_API_URL)
+│       ├── api.js                   # API base URL config (REACT_APP_API_URL)
+│       ├── App.js                   # Root component and route definitions
 │       ├── context/
-│       │   └── AuthContext.js      # JWT session handling (httpOnly cookies in production)
+│       │   └── AuthContext.js       # JWT session handling
 │       └── pages/
-│           ├── CompanyDashboard.js # Job posting + application status management
-│           └── CandidateDashboard.js # Job browsing + application tracking
-└── server/                         # Express API
-    ├── index.js                    # App entry — CORS, route mounting
-    ├── routes/                     # REST route definitions (auth, jobs, applications)
-    ├── controllers/                # Business logic per domain
-    └── models/                     # Mongoose schemas — User, Job, Application
+│           ├── Login.js             # Login page
+│           ├── Register.js          # Role-based registration (company/candidate)
+│           ├── CompanyDashboard.js  # Job posting + application status management
+│           └── CandidateDashboard.js# Job browsing + application tracking
+└── server/                          # Express API
+    ├── index.js                     # App entry — CORS, route mounting
+    ├── config/
+    │   └── db.js                    # MongoDB connection setup
+    ├── routes/                      # REST route definitions
+    │   ├── authRoutes.js
+    │   ├── jobRoutes.js
+    │   └── applicationRoutes.js
+    ├── controllers/                 # Business logic per domain
+    │   ├── authController.js
+    │   ├── jobController.js
+    │   └── applicationController.js
+    ├── middleware/
+    │   └── authMiddleware.js        # JWT verification + role checks
+    └── models/                      # Mongoose schemas
+        ├── User.js
+        ├── Job.js
+        └── Application.js
 ```
 
 ---
