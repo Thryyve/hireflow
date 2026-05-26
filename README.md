@@ -260,7 +260,7 @@ Distributed under the **ISC License**. See [`server/package.json`](./server/pack
 
 ## 👤 Author
 
-Made with ❤️ by **[Aayam Sinha]**
+Made with ٩(^ᗜ^ )و ´- by **[Aayam Sinha]**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=flat-square&logo=linkedin)](https://linkedin.com/in/your-profile)
-[![Email](https://img.shields.io/badge/Email-Say%20Hi-ea4335?style=flat-square&logo=gmail)](mailto:your@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=flat-square&logo=linkedin)]((https://www.linkedin.com/in/aayam-sinha/))
+[![Email](https://img.shields.io/badge/Email-Say%20Hi-ea4335?style=flat-square&logo=gmail)](mailto:sinhaaayam12@email.com)
