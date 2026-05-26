@@ -6,8 +6,16 @@ import CompanyDashboard from './pages/CompanyDashboard'
 import CandidateDashboard from './pages/CandidateDashboard'
 
 function App() {
-  const { user, logout } = useAuth()
+  const { user, logout, isLoading } = useAuth()
   const [page, setPage] = useState('login')
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <p className="text-gray-600">Loading...</p>
+      </div>
+    )
+  }
 
   if (user) {
     return (
