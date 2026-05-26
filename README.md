@@ -95,7 +95,15 @@ npm install
 
 ```bash
 cp .env.example .env
-# Open .env and fill in MONGO_URI, JWT_SECRET, PORT, CLIENT_URL
+```
+
+Edit `.env` with your values:
+
+```env
+MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/hireflow
+JWT_SECRET=your_super_secret_string_here
+PORT=8000
+CLIENT_URL=http://localhost:3000
 ```
 
 **4. Install frontend dependencies**
@@ -160,7 +168,7 @@ hireflow/
 │   └── src/
 │       ├── api.js                  # API base URL config (REACT_APP_API_URL)
 │       ├── context/
-│       │   └── AuthContext.js      # JWT session handling (token + user in localStorage)
+│       │   └── AuthContext.js      # JWT session handling (httpOnly cookies in production)
 │       └── pages/
 │           ├── CompanyDashboard.js # Job posting + application status management
 │           └── CandidateDashboard.js # Job browsing + application tracking
@@ -254,7 +262,7 @@ Distributed under the **ISC License**. See [`server/package.json`](./server/pack
 
 ## 👤 Author
 
-Made with ٩(^ᗜ^ )و ´- by **[Aayam Sinha]**
+Made by **[Aayam Sinha]**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/aayam-sinha/)
 [![Email](https://img.shields.io/badge/Email-Say%20Hi-ea4335?style=flat-square&logo=gmail)](mailto:sinhaaayam12@email.com)
