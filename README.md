@@ -287,4 +287,4 @@ Distributed under the **ISC License**. See [`server/package.json`](./server/pack
 Made by **[Aayam Sinha]**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0a66c2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/aayam-sinha/)
-[![Email](https://img.shields.io/badge/Email-Say%20Hi-ea4335?style=flat-square&logo=gmail)](mailto:sinhaaayam12@email.com)
+[![Email](https://img.shields.io/badge/Email-Say%20Hi-ea4335?style=flat-square&logo=gmail)](mailto:sinhaaayam12@gmail.com)
